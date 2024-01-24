@@ -20,12 +20,11 @@ double ComplexNumber::imaginary() const
 	return imaginary_;
 }
 
-ComplexNumber ComplexNumber::operator*=(ComplexNumber const& rhs)
+ComplexNumber ComplexNumber::operator*=(ComplexNumber const& rhs) 
 {
-	ComplexNumber result;
-	result.real_ = (this->real() * rhs.real()) - (this->imaginary() * rhs.imaginary());
-	result.imaginary_ = (this->imaginary() * rhs.real()) + (this->real() * rhs.imaginary());
-	return result;
+	real_ = (this->real() * rhs.real()) - (this->imaginary() * rhs.imaginary());
+	imaginary_ = (this->imaginary() * rhs.real()) + (this->real() * rhs.imaginary());
+	return *this;
 }
 
 ComplexNumber ComplexNumber::operator*(const ComplexNumber& rhs) const
